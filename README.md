@@ -42,9 +42,14 @@ Displays the detected sentiment in text format.
 
 
 
-🤝 Other Contributors
+🤝Contributors
+
+Suravi Ghosh
 
 Moumi RoyChowdhury
+
 Rimita Dey
+
 Debayan Singh
+
 Rahul Mahato
