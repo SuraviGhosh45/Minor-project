@@ -42,7 +42,8 @@ Displays the detected sentiment in text format.
 
 
 
-#🤝 Other Contributors
+🤝 Other Contributors
+
 Moumi RoyChowdhury
 Rimita Dey
 Debayan Singh
