@@ -1,0 +1,7 @@
+flask
+gTTS
+pygame
+numpy
+sounddevice
+SpeechRecognition
+g4f

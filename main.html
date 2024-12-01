@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mood Detection</title>
+    <link rel="stylesheet" href="/static/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>Mood Detection System</h1>
+        <p>Detect your mood using text or voice input.</p>
+      </header>
+
+      <main>
+        <!-- Text-to-Mood Section -->
+        <section class="card">
+          <h2>Text-to-Mood Detection</h2>
+          <textarea
+            id="textInput"
+            placeholder="Enter your sentence here..."
+            rows="4"
+          ></textarea>
+          <div class="button-group">
+            <button onclick="detectTextMood()">Detect Mood (Offline)</button>
+            <button onclick="detectTextMoodOnline()">
+              Detect Mood (Online)
+            </button>
+          </div>
+          <p id="textMoodResult" class="result"></p>
+        </section>
+
+        <!-- Voice-to-Mood Section -->
+        <section class="card">
+          <h2>Voice-to-Mood Detection</h2>
+          <p>Click the button below and speak to detect your mood.</p>
+          <div class="button-group">
+            <button onclick="detectVoiceMood()">Detect Mood (Offline)</button>
+            <button onclick="detectVoiceMoodOnline()">
+              Detect Mood (Online)
+            </button>
+          </div>
+          <p id="voiceMoodResult" class="result"></p>
+        </section>
+      </main>
+    </div>
+
+    <script>
+      async function detectTextMood() {
+        const input = document.getElementById("textInput").value.trim();
+        if (!input) {
+          document.getElementById("textMoodResult").innerText =
+            "Please enter a sentence.";
+          return;
+        }
+        const response = await fetch("/text-to-mood-offline", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sentence: input }),
+        });
+        const data = await response.json();
+        document.getElementById("textMoodResult").innerText =
+          data.mood || data.error;
+      }
+
+      async function detectTextMoodOnline() {
+        const input = document.getElementById("textInput").value.trim();
+        if (!input) {
+          document.getElementById("textMoodResult").innerText =
+            "Please enter a sentence.";
+          return;
+        }
+        const response = await fetch("/text-to-mood-online", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ sentence: input }),
+        });
+        const data = await response.json();
+        document.getElementById("textMoodResult").innerText =
+          data.mood || data.error;
+      }
+
+      async function detectVoiceMood() {
+        document.getElementById("voiceMoodResult").innerText = "Listening...";
+        const response = await fetch("/voice-to-mood-offline", {
+          method: "POST",
+        });
+        const data = await response.json();
+        document.getElementById("voiceMoodResult").innerText =
+          data.mood || data.error;
+      }
+
+      async function detectVoiceMoodOnline() {
+        document.getElementById("voiceMoodResult").innerText = "Listening...";
+        const response = await fetch("/voice-to-mood-online", {
+          method: "POST",
+        });
+        const data = await response.json();
+        document.getElementById("voiceMoodResult").innerText =
+          data.mood || data.error;
+      }
+    </script>
+  </body>
+</html>
