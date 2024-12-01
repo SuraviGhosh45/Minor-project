@@ -1,11 +1,11 @@
 # Minor-project
 
-#🎯 Project Overview
+🎯 Project Overview
 
 This project is a Minor Project completed during the 5th semester, showcasing an innovative approach to sentiment analysis using voice and text inputs. With the increasing importance of emotional understanding in various fields, this project aims to classify the sentiment of users effectively and visually, making it both functional and user-friendly.
 We leverage advanced libraries and techniques for accurate analysis and provide a a basic html and css website to enhance interactivity and usability. in the another option  file we use Graphical user interface as another method to run the project with beautiful interface.
 
-#🚀 Key Features
+🚀 Key Features
 
 1.Multi-Input Sentiment Analysis:
 Supports voice inputs, transcribed into text for analysis.
@@ -16,7 +16,7 @@ Visualization
 
 Sentiments are displayed as context on the screen.
 
-#🛠️ Technologies and Libraries Used
+🛠️ Technologies and Libraries Used
 
 Programming Language: Python
 Core Libraries:
@@ -27,7 +27,7 @@ numpy: Handles numerical operations on the audio data.
 speech_recognition: Converts audio data into text (speech-to-text).
 g4f.client: Communicates with the Generative AI API for mood detection.
 
-#💡 Project Workflow
+💡 Project Workflow
 
 Input Processing:
 Voice Input: Uses a microphone to capture voice, converts it to text using a speech recognition library.
@@ -38,7 +38,7 @@ Sentiment classification using a pre-trained or custom machine learning model.
 Results Display:
 Displays the detected sentiment in text format.
 
-#📸 DEMO
+📸 DEMO
 
 
 
