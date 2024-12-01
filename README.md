@@ -38,9 +38,6 @@ Sentiment classification using a pre-trained or custom machine learning model.
 Results Display:
 Displays the detected sentiment in text format.
 
-📸 DEMO
-
-
 
 🤝Contributors
 
